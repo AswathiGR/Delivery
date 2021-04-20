@@ -9,12 +9,7 @@
     <StackLayout>
         <Grid
             Margin="10,20,10,10"
-            ColumnDefinitions="20,50,20,Auto,20"
-            RowDefinitions="20,40,Auto"
             RowSpacing="20">
-
-
-
             <Image
                 Grid.Row="0"
                 Grid.Column="0"
@@ -47,28 +42,24 @@
                 Aspect="AspectFit"
                 HorizontalOptions="End"
                 Source="profile_icon.png" />
-            <Frame
-                Grid.Row="1"
-                Grid.ColumnSpan="5"
-                BackgroundColor="Transparent"
-                BorderColor="LightGray"
-                CornerRadius="15"
-                Opacity="0.5">
-                <Entry Placeholder="Search" PlaceholderColor="Gray" />
 
-            </Frame>
-            <Image
-                Grid.Row="1"
-                Grid.Column="4"
-                Aspect="AspectFit"
-                HorizontalOptions="End"
-                Source="search.png" />
 
         </Grid>
+        <Frame
+            BackgroundColor="Transparent"
+            BorderColor="LightGray"
+            CornerRadius="15"
+            Opacity="0.5">
+            <Entry Placeholder="Search" PlaceholderColor="Gray" />
+
+        </Frame>
+        <Image
+            Aspect="AspectFit"
+            HorizontalOptions="End"
+            Source="search.png" />
         <CollectionView x:Name="FoodView" Margin="5,20,5,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <!--<Label Text="{Binding .}" />-->
 
                     <StackLayout>
 
@@ -77,10 +68,7 @@
                             Padding="0"
                             CornerRadius="10"
                             HeightRequest="260">
-                            <Grid
-                                ColumnDefinitions="*,*,*,*"
-                                RowDefinitions="*,*,Auto,Auto,Auto"
-                                RowSpacing="0">
+                            <Grid RowSpacing="0">
 
                                 <Image
                                     Grid.Row="0"
@@ -104,9 +92,9 @@
                                     HorizontalOptions="End"
                                     Source="{Binding arrow}"
                                     VerticalOptions="End">
-                                    <Image.GestureRecognizers>
+                                    <!--<Image.GestureRecognizers>
                                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Go" />
-                                    </Image.GestureRecognizers>
+                                    </Image.GestureRecognizers>-->
                                 </Image>
 
                             </Grid>

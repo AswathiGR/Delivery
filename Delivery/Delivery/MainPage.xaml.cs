@@ -110,12 +110,12 @@ namespace Delivery
 
             };
             FoodView.ItemsSource = places;
-        
+
         }
-       /* private async void Go(object sender, EventArgs e)
+        private void Go(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new View1());
-        }*/
+            //await Navigation.PushAsync(new View1());
+        }
     }
   
 }
