@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Delivery.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackLayout>
+        <Grid
+            Margin="10,20,10,10"
+            ColumnDefinitions="20,50,20,Auto,20"
+            RowDefinitions="20,40,Auto"
+            RowSpacing="20">
+
+
+
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Aspect="AspectFit"
+                HeightRequest="10"
+                Source="location.png" />
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="12"
+                Text="Calicut"
+                TextColor="Black"
+                VerticalOptions="Center" />
+            <Image
+                Grid.Row="0"
+                Grid.Column="2"
+                HeightRequest="3"
+                Source="drop.png"
+                WidthRequest="7" />
+
+            <Image
+                Grid.Row="0"
+                Grid.Column="3"
+                Aspect="AspectFit"
+                HorizontalOptions="EndAndExpand"
+                Source="basket.png" />
+            <Image
+                Grid.Row="0"
+                Grid.Column="4"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                Source="profile_icon.png" />
+            <Frame
+                Grid.Row="1"
+                Grid.ColumnSpan="5"
+                BackgroundColor="Transparent"
+                BorderColor="LightGray"
+                CornerRadius="15"
+                Opacity="0.5">
+                <Entry Placeholder="Search" PlaceholderColor="Gray" />
+
+            </Frame>
+            <Image
+                Grid.Row="1"
+                Grid.Column="4"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                Source="search.png" />
+
+        </Grid>
+        <CollectionView x:Name="FoodView" Margin="5,20,5,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--<Label Text="{Binding .}" />-->
+
+                    <StackLayout>
+
+                        <Frame
+                            Margin="10,0,10,20"
+                            Padding="0"
+                            CornerRadius="10"
+                            HeightRequest="260">
+                            <Grid
+                                ColumnDefinitions="*,*,*,*"
+                                RowDefinitions="*,*,Auto,Auto,Auto"
+                                RowSpacing="0">
+
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="4"
+                                    Aspect="AspectFill"
+                                    HeightRequest="150"
+                                    Source="{Binding Image}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2"
+                                    Margin="15,0,0,8"
+                                    FontSize="14"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="{Binding info}"
+                                    VerticalOptions="End" />
+                                <Image
+                                    Grid.Row="1"
+                                    Grid.Column="4"
+                                    Margin="15,10,0,0"
+                                    HorizontalOptions="End"
+                                    Source="{Binding arrow}"
+                                    VerticalOptions="End">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Go" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
