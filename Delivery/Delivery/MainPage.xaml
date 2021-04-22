@@ -2,15 +2,18 @@
 <ContentPage
     x:Class="Delivery.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--
+        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+    -->
     <StackLayout>
         <Grid
-            Margin="10,20,10,10"
-            ColumnDefinitions="20,50,20,Auto,20"
-            RowDefinitions="20,40,Auto"
+            Margin="20"
+            ColumnDefinitions="Auto,Auto,Auto,*,Auto,Auto"
+            ColumnSpacing="5"
+            RowDefinitions="Auto,Auto,Auto"
             RowSpacing="20">
 
 
@@ -19,19 +22,20 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Aspect="AspectFit"
-                HeightRequest="10"
+                HorizontalOptions="Start"
                 Source="location.png" />
             <Label
                 Grid.Row="0"
                 Grid.Column="1"
                 FontSize="12"
+                HorizontalOptions="StartAndExpand"
                 Text="Calicut"
                 TextColor="Black"
                 VerticalOptions="Center" />
             <Image
                 Grid.Row="0"
                 Grid.Column="2"
-                HeightRequest="3"
+                HorizontalOptions="StartAndExpand"
                 Source="drop.png"
                 WidthRequest="7" />
 
@@ -49,73 +53,90 @@
                 Source="profile_icon.png" />
             <Frame
                 Grid.Row="1"
-                Grid.ColumnSpan="5"
+                Grid.ColumnSpan="6"
+                Padding="5"
                 BackgroundColor="Transparent"
                 BorderColor="LightGray"
                 CornerRadius="15"
+                HeightRequest="50"
                 Opacity="0.5">
-                <Entry Placeholder="Search" PlaceholderColor="Gray" />
+                <Entry
+                    FontSize="Micro"
+                    Placeholder="Search"
+                    PlaceholderColor="Gray" />
 
             </Frame>
-            <Image
+            <ImageButton
                 Grid.Row="1"
                 Grid.Column="4"
                 Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                Clicked="search"
                 HorizontalOptions="End"
                 Source="search.png" />
 
         </Grid>
-        <CollectionView x:Name="FoodView" Margin="5,20,5,0">
+        <CollectionView x:Name="FoodView" Margin="5">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    HorizontalItemSpacing="0"
+                    Orientation="Vertical"
+                    Span="2" />
+            </CollectionView.ItemsLayout>
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <!--<Label Text="{Binding .}" />-->
 
-                    <StackLayout>
 
-                        <Frame
-                            Margin="10,0,10,20"
-                            Padding="0"
-                            CornerRadius="10"
-                            HeightRequest="260">
-                            <Grid
-                                ColumnDefinitions="*,*,*,*"
-                                RowDefinitions="*,*,Auto,Auto,Auto"
-                                RowSpacing="0">
 
-                                <Image
-                                    Grid.Row="0"
-                                    Grid.RowSpan="2"
-                                    Grid.ColumnSpan="4"
-                                    Aspect="AspectFill"
-                                    HeightRequest="150"
-                                    Source="{Binding Image}" />
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.ColumnSpan="2"
-                                    Margin="15,0,0,8"
-                                    FontSize="14"
-                                    HorizontalOptions="StartAndExpand"
-                                    Text="{Binding info}"
-                                    VerticalOptions="End" />
-                                <Image
-                                    Grid.Row="1"
-                                    Grid.Column="4"
-                                    Margin="15,10,0,0"
-                                    HorizontalOptions="End"
-                                    Source="{Binding arrow}"
-                                    VerticalOptions="End">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Go" />
-                                    </Image.GestureRecognizers>
-                                </Image>
+                    <Frame BackgroundColor="Transparent" CornerRadius="10">
 
-                            </Grid>
-                        </Frame>
-                    </StackLayout>
+
+                        <Grid
+                            BackgroundColor="Transparent"
+                            ColumnDefinitions="Auto,*,Auto"
+                            RowDefinitions="Auto,*,Auto">
+
+                            <Image
+                                Grid.Row="0"
+                                Grid.RowSpan="3"
+                                Grid.ColumnSpan="3"
+                                Aspect="AspectFit"
+                                HeightRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                Source="{Binding Image1}" />
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="7"
+                                FontSize="6"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding info}"
+                                TextColor="White"
+                                VerticalOptions="CenterAndExpand" />
+                            <Image
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Margin="7"
+                                Aspect="AspectFit"
+                                Source="{Binding arrow}">
+
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Go" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+
+                        </Grid>
+
+                    </Frame>
 
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
     </StackLayout>
 
 </ContentPage>

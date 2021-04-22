@@ -9,7 +9,14 @@ namespace Delivery.models
     {
        
 
-        public string Image { get; set; }
+        public string Image1{ get; set; }
+        public string Image2{ get; set; }
+        public string Image11{ get; set; }
+        public string Image12{ get; set; }
+        public string Image13{ get; set; }
+        public string Image14{ get; set; }
+        
+        
         public string info { get; set; }
         public string arrow { get; set; }
 
