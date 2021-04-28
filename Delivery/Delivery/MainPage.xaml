@@ -31,7 +31,13 @@
                 HorizontalOptions="StartAndExpand"
                 Text="Calicut"
                 TextColor="Black"
-                VerticalOptions="Center" />
+                VerticalOptions="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="Android" Value="Poppins.ttf" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
             <Image
                 Grid.Row="0"
                 Grid.Column="2"
@@ -115,7 +121,13 @@
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding info}"
                                 TextColor="White"
-                                VerticalOptions="CenterAndExpand" />
+                                VerticalOptions="CenterAndExpand">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="Poppins.ttf" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
                             <Image
                                 Grid.Row="2"
                                 Grid.Column="2"

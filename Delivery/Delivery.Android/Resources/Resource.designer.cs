@@ -11800,46 +11800,52 @@ namespace Delivery.Droid
 			public const int notify_panel_notification_icon_bg = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int profile_icon = 2131165332;
+			public const int paragon = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int rect_1 = 2131165333;
+			public const int profile_icon = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int rect_21 = 2131165334;
+			public const int rect_1 = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int rect_22 = 2131165335;
+			public const int rect_21 = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int rect_31 = 2131165336;
+			public const int rect_22 = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int rect_32 = 2131165337;
+			public const int rect_31 = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int rect_41 = 2131165338;
+			public const int rect_32 = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int rect_42 = 2131165339;
+			public const int rect_41 = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int rect_43 = 2131165340;
+			public const int rect_42 = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int rect_44 = 2131165341;
+			public const int rect_43 = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int search = 2131165342;
+			public const int rect_44 = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int test_custom_background = 2131165343;
+			public const int search = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int tooltip_frame_dark = 2131165344;
+			public const int test_custom_background = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int tooltip_frame_light = 2131165345;
+			public const int tooltip_frame_dark = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int tooltip_frame_light = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int Vector = 2131165347;
 			
 			static Drawable()
 			{

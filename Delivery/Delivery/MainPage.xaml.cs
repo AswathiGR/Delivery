@@ -23,6 +23,7 @@ namespace Delivery
         public MainPage()
         {
             InitializeComponent();
+            
             places = new ObservableCollection<food>();
             //places.Add(new food
 
@@ -141,11 +142,11 @@ namespace Delivery
         }
         private async void Go(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new Page2());
         }
         private async void search(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page2());
+            await Navigation.PushAsync(new Page1());
         }
     }
 }

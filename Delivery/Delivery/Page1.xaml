@@ -1,12 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Delivery.Page1">
+<ContentPage
+    x:Class="Delivery.Page1"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Order from Restaurants"
+    NavigationPage.BackButtonTitle="Order from Restaurants"
+    NavigationPage.HasBackButton="True"
+    NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="10">
+            <Grid
+                Margin="20"
+                ColumnDefinitions="Auto,Auto,Auto,*,Auto,Auto"
+                ColumnSpacing="5"
+                RowDefinitions="Auto,Auto,Auto"
+                RowSpacing="20">
+                <Frame
+                    Grid.Row="1"
+                    Grid.ColumnSpan="6"
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="LightGray"
+                    CornerRadius="15"
+                    HeightRequest="50"
+                    Opacity="0.5">
+                    <Entry
+                        FontSize="Micro"
+                        Placeholder="Search"
+                        PlaceholderColor="Gray" />
+
+                </Frame>
+                <ImageButton
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Clicked="search"
+                    HorizontalOptions="End"
+                    Source="search.png" />
+            </Grid>
+            <Label
+                Margin="10,-30,0,0"
+                HorizontalOptions="StartAndExpand"
+                Text="198 Restaurants near you" />
+            <CollectionView x:Name="hotelname" Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowSpacing="4">
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="20*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="20*" />
+                                <!--<RowDefinition Height="1" />-->
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+
+
+                            <ImageButton
+                                Grid.RowSpan="3"
+                                Grid.Column="0"
+                                CornerRadius="10"
+                                HeightRequest="90"
+                                Source="{Binding Picture}" />
+
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Margin="20,0,0,0"
+                                FontSize="10"
+                                Text="{Binding Time}" />
+
+
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FontSize="15"
+                                HorizontalOptions="Start"
+                                Text="{Binding Name}"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="Poppins.ttf" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+
+                            </Label>
+
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Text="{Binding Place}" />
+                            <Image
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="10,0,-40,30"
+                                Aspect="AspectFit"
+                                HeightRequest="2"
+                                Source="Vector.png" />
+                            <BoxView
+                                Grid.Row="3"
+                                Grid.ColumnSpan="3"
+                                BackgroundColor="#F0F0F0"
+                                HeightRequest="1"
+                                VerticalOptions="Center" />
+
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
