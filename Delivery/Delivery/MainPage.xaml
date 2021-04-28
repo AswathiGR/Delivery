@@ -15,9 +15,6 @@
             ColumnSpacing="5"
             RowDefinitions="Auto,Auto,Auto"
             RowSpacing="20">
-
-
-
             <Image
                 Grid.Row="0"
                 Grid.Column="0"
@@ -57,42 +54,24 @@
                 Aspect="AspectFit"
                 HorizontalOptions="End"
                 Source="profile_icon.png" />
-            <Frame
-                Grid.Row="1"
-                Grid.ColumnSpan="6"
-                Padding="5"
-                BackgroundColor="Transparent"
-                BorderColor="LightGray"
-                CornerRadius="15"
-                HeightRequest="50"
-                Opacity="0.5">
-                <Entry
-                    FontSize="Micro"
-                    Placeholder="Search"
-                    PlaceholderColor="Gray" />
 
-            </Frame>
-            <ImageButton
-                Grid.Row="1"
-                Grid.Column="4"
-                Aspect="AspectFit"
-                BackgroundColor="Transparent"
-                Clicked="search"
-                HorizontalOptions="End"
-                Source="search.png" />
 
         </Grid>
-        <CollectionView x:Name="FoodView" Margin="5">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout
-                    HorizontalItemSpacing="0"
-                    Orientation="Vertical"
-                    Span="2" />
-            </CollectionView.ItemsLayout>
+        <Frame
+            BackgroundColor="Transparent"
+            BorderColor="LightGray"
+            CornerRadius="15"
+            Opacity="0.5">
+            <Entry Placeholder="Search" PlaceholderColor="Gray" />
 
+        </Frame>
+        <Image
+            Aspect="AspectFit"
+            HorizontalOptions="End"
+            Source="search.png" />
+        <CollectionView x:Name="FoodView" Margin="5,20,5,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <!--<Label Text="{Binding .}" />-->
 
 
 

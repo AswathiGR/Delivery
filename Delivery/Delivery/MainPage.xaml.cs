@@ -23,7 +23,7 @@ namespace Delivery
         public MainPage()
         {
             InitializeComponent();
-            
+
             places = new ObservableCollection<food>();
             //places.Add(new food
 
@@ -150,4 +150,3 @@ namespace Delivery
         }
     }
 }
-
